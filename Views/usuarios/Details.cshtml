@@ -1,0 +1,75 @@
+﻿@model SOPORTE.Models.usuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles</h2>
+<div>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.usuario_id }, new { @class = "btn btn-primary" }) 
+    @Html.ActionLink("Volver", "Index", new { area = "" }, new { @class = "btn btn-primary" })
+
+</div>
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cuenta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cuenta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.activo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rol1.tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rol1.tipo)
+        </dd>
+
+    </dl>
+</div>
+

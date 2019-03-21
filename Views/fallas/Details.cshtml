@@ -1,0 +1,26 @@
+﻿@model SOPORTE.Models.falla
+
+@{
+    ViewBag.Title = "";
+}
+
+<h2>Detalles</h2>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.falla_id }, new { @class = "btn btn-primary" }) 
+    @Html.ActionLink("Volver", "UserDashBoard", "Home", new { area = "" }, new { @class = "btn btn-primary" })
+</p>
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+    </dl>
+</div>
+

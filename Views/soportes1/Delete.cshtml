@@ -1,0 +1,128 @@
+﻿@model SOPORTE.Models.soporte
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Esta seguro de BORRAR este registro?</h3>
+<div>
+    <h4>soporte</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.equipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.equipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nro_de_orden)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nro_de_orden)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_inicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_inicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_final)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_final)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.division)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.division)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.observaciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.observaciones)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.borrado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.borrado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado1.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado1.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.falla1.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.falla1.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.it1.cuenta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.it1.cuenta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.medida1.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.medida1.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuario1.cuenta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuario1.cuenta)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver a la lista", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,42 @@
+﻿@model List<SOPORTE.Models.falla>
+
+<p class="botonera">
+    @Html.ActionLink("Volver a Busquedas", "Index", "Estadisticas", new { area = "" }, new { @class = "btn btn-primary" })
+    @*@Html.ActionLink("generar", "GeneratePDF", "Estadisticas", new { area = "" }, new { @class = "btn btn-primary" })*@
+    @*<input type="button" value="Imprimir" onClick="window.print()">*@
+</p>
+
+<h2>Total de Fallas</h2>
+
+<table class="table" border="0" width="50%">
+    <tr>
+        <th>
+            FALLA DESCRIPCION
+        </th>
+        <th>TOTAL</th>
+    </tr>
+
+    @for (var i = 0; i < Model.Count; i++)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem[i].descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem[i].falla_id)
+            </td>
+        </tr>
+    }
+
+
+</table>
+
+
+
+<table>
+    <tr>
+        <td>
+            Echo por : @Session["User"]
+        </td>
+    </tr>
+</table>

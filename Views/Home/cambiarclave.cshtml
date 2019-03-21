@@ -1,0 +1,39 @@
+﻿@model SOPORTE.Models.usuario
+
+@{
+    ViewBag.Title = "cambiarclave";
+}
+
+
+<h2>Modificacion de Clave</h2>
+
+@using (Html.BeginForm("CambiarContrasenia", "Home", FormMethod.Get))
+{
+
+    <p>
+        @*@Html.ActionLink("Cambiar Clave", "", "", new { area = "" }, new { @class = "btn btn-primary" })*@
+        <button type="submit" class="btn btn-primary">Cambiar</button>
+    </p>
+
+    <center>
+
+        <table>
+            <tr>
+                <td>Usuario</td>
+                <td>@Session["User"]</td>
+            </tr>
+            <tr>
+                <td>Cuenta</td>
+                <td>@Session["cuenta"]</td>
+            </tr>
+            <tr>
+                <td>Password Nueva</td>
+                <td>@Html.TextBox("dato")</td>
+            </tr>
+        </table>
+
+    </center>
+
+
+}
+

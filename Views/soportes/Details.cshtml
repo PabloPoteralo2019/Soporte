@@ -1,0 +1,111 @@
+﻿@model SOPORTE.Models.soporte
+
+@*@{
+    ViewBag.Title = "Details";
+}*@
+
+<html>
+
+<head>
+    <title> jyj</title>
+
+    <style>
+
+        table {
+            width: 100%;
+            height: 100%;
+        }
+        .medio {
+            height: 250px;
+           
+        }
+        .obser {
+            height: 250px;
+        }
+        .primero{
+            text-align:center;
+        }
+    </style>
+    <link href="~/Content/estilos-impresion.css" rel="stylesheet" media="print" />
+</head>
+
+<body>
+
+    <p>
+        <input type="button" class="btn1" value="Guardar Orden de Trabajo" onClick="window.print()">
+    </p>
+
+    <h2 align="center">ORDEN DE TRABAJO</h2>
+
+    <div>
+
+        <table border="1">
+            <tr class="primero">
+                <th align="center">ORDEN DE TRABAJO PARA EQUIPOS</th>
+                <th align="center">DIAP INFORMATICA</th>
+            </tr>
+            <tr>
+                <td>Numero de Orden: @Html.DisplayFor(model => model.nro_de_orden)</td>
+                <td>Equipo: @Html.DisplayFor(model => model.equipo)</td>
+            </tr>
+            <tr>
+                <td>Solicitante: @Html.DisplayFor(model => model.it1.cuenta)</td>
+                <td>Division :  @Html.DisplayFor(model => model.division) </td>
+            </tr>
+            <tr>
+                <td>Fecha desde: @Html.DisplayFor(model => model.fecha_inicio)</td>
+                <td>Fecha Hasta: @Html.DisplayFor(model => model.fecha_final)</td>
+            </tr>
+            <tr>
+                <td class="tecnico" colspan="2">Tecnico Responsable: @Html.DisplayFor(model => model.usuario1.cuenta) </td>
+            </tr>
+            <tr class="medio">
+                <th valign="top">
+                    DESCRIPCION DEL TRABAJO SOLICITADO:
+                    <br />
+                    @Html.DisplayFor(model => model.descripcion)
+                </th>
+                <th valign="top">
+                    FIRMA Y SELLO DE AUTORIZACION
+
+                </th>
+            </tr>
+
+            <tr>
+                <td valign="top">
+                    FALLAS DETECTADAS:
+                    <br />
+                    @Html.DisplayFor(model => model.falla1.descripcion)
+                </td>
+                <td valign="top">
+                    MEDIDAS APLICADAS:
+                    <br />
+                    @Html.DisplayFor(model => model.medida1.descripcion)
+                </td>
+            </tr>
+            <tr>
+                <td class="obser" valign="top" colspan="2">
+                    OBSERVACIONES:
+                    <br />
+                    @Html.DisplayFor(model => model.observaciones)
+                </td>
+            </tr>
+
+        </table>
+
+        <hr />
+
+    </div>
+    <p class="fin">
+        @Html.ActionLink("Volver a la lista", "Busqueda")
+    </p>
+
+
+
+</body>
+
+
+</html>
+
+
+

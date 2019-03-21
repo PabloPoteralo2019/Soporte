@@ -1,0 +1,128 @@
+﻿@model  List<SOPORTE.Models.soporte>
+
+@{
+    ViewBag.Title = "Busqueda";
+}
+
+
+<h2>Estadisticas</h2>
+
+@using (Html.BeginForm("Busqueda", "Estadisticas", FormMethod.Get))
+{
+    <p>
+
+        @Html.ActionLink("Volver a Busquedas", "Index", "Estadisticas", new { area = "" }, new { @class = "btn btn-primary" })
+
+    </p>
+}
+
+
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model[0].equipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].nro_de_orden)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].fecha_inicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].fecha_final)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].division)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].observaciones)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].borrado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].estado1.descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].falla1.descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].it1.cuenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].medida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].usuario1.cuenta)
+            </th>
+            <th></th>
+        </tr>
+
+        @for (var i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem[i].equipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem[i].nro_de_orden)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem[i].fecha_inicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem[i].fecha_final)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem[i].division)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem[i].descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem[i].observaciones)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem[i].borrado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem[i].estado1.descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem[i].falla1.descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem[i].it1.cuenta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem[i].medida1.descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem[i].usuario1.cuenta)
+                </td>
+                @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id = SOPORTE.Models.soporte[0] modelItem[0].soporte_id }) |
+                    @Html.ActionLink("Details", "Details", new { id = modelItem[0].soporte_id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = modelItem[0].soporte_id })
+                </td>*@
+            </tr>
+
+
+        }
+
+    </table>
+
+<table>
+    <tr>
+        <td><h3>Total de Fallas detectadas = @ViewData["total"]</h3></td>
+        
+        
+    </tr>
+    @*<tr>
+        <td><h3>Cantidad de Falla por Insumo = @ViewData["cantidades1"]</h3></td>
+    </tr>*@
+</table>

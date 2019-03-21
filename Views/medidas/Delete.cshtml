@@ -1,0 +1,34 @@
+﻿@model SOPORTE.Models.medida
+
+@{
+    ViewBag.Title = "";
+}
+
+<h2>Borrar</h2>
+
+<h3>Esta seguro que quiere BORRAR este Registro ?</h3>
+@Html.ActionLink("Volver", "Index", new { area = "" }, new { @class = "btn btn-primary" })
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-default" /> 
+           
+        </div>
+    }
+</div>

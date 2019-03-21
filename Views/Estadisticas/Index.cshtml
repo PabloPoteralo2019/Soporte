@@ -1,0 +1,135 @@
+﻿@model IEnumerable<SOPORTE.Models.soporte>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Estadisticas</h2>
+<p>
+
+
+</p>
+
+@using (Html.BeginForm("Busqueda", "Estadisticas", FormMethod.Get))
+{
+    <input type="submit" class="btn btn-primary" value="Buscar" />
+    @*@Html.ActionLink("Buscar", "Busqueda", "Estadisticas", new { area = "" }, new { @class = "btn btn-primary" })*@
+    @Html.ActionLink("Volver", "UserDashBoard", "Home", new { area = "" }, new { @class = "btn btn-primary" })
+    <p>
+        <table>
+            <tr>
+                <td>Fecha desde : @Html.TextBox("fecha_desde")</td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td>Fecha Hasta : @Html.TextBox("fecha_hasta")</td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td>Tipo Falla : @Html.DropDownList("fallas", ViewData["fallas"] as SelectList, new { @onchange = "" })</td>
+                <td></td>
+            </tr>
+            <tr> </tr>
+        </table>
+    </p>
+}
+
+
+
+
+
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.equipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nro_de_orden)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha_inicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha_final)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.division)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.observaciones)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.borrado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estado1.descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.falla1.descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.it1.cuenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.medida1.descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.usuario1.cuenta)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.equipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nro_de_orden)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha_inicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha_final)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.division)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.observaciones)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.borrado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.estado1.descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.falla1.descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.it1.cuenta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.medida1.descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.usuario1.cuenta)
+                </td>
+                @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.soporte_id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.soporte_id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.soporte_id })
+                </td>
+            </tr>
+        }
+
+    </table>*@

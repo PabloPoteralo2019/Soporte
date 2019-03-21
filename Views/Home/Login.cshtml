@@ -1,0 +1,79 @@
+﻿@model SOPORTE.Models.usuario
+
+@{
+    ViewBag.Title = "";
+}
+
+<html>
+<head>
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+</head>
+
+<body class="fondito">
+
+
+
+    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+    {
+        
+        <table align="center">
+            <tr>
+                <td>
+                    <img src="~/Imagenes/1492608037-13-setting-configure-repair-support-optimization-google_83381.ico" />
+                </td>
+            </tr>
+        </table>
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        if (ViewBag.Message != null)
+        {
+            <div style="border: 1px solid red">
+                @ViewBag.Message
+            </div>
+        }
+        <table align="center">
+            <tr>
+                <td class="lbllogin">@Html.LabelFor(a => a.cuenta)</td>
+                <td class="lbllogin">@Html.TextBoxFor(a => a.cuenta)</td>
+                <td>@Html.ValidationMessageFor(a => a.cuenta)</td>
+            </tr>
+            <tr>
+                <td class="lbllogin">
+                    @Html.LabelFor(a => a.password)
+                </td>
+                <td class="lbllogin">
+                    @Html.PasswordFor(a => a.password)
+                </td>
+                <td class="lbllogin">
+                    @Html.ValidationMessageFor(a => a.password)
+                </td>
+            </tr>
+
+        </table>
+
+        <table align="center">
+
+            <tr>
+                <td>
+                    <input type="submit" value="ACCEDER" />
+                </td>
+
+            </tr>
+        </table>
+
+        @*</fieldset>*@
+
+    }
+
+
+
+
+</body>
+
+
+
+</html>

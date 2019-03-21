@@ -1,0 +1,23 @@
+﻿@model SOPORTE.Models.usuario
+
+<link href="~/Content/barranavegacion.css" rel="stylesheet" />
+<script src="~/Content/jquery-1.3.2.js"></script>
+
+
+
+
+<fieldset>
+    <legend> </legend>
+
+    @if (Session["User"] != null)
+    {
+
+        <h3>BienVenido al Sistema @Session["User"].ToString()</h3> <br />
+
+        @Html.ActionLink("Consultar Soporte", "BusquedaAV", "soportes", new { area = "" }, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Cerrar Sesion", "cerrarsesion", "Home", new { area = "" }, new { @class = "btn btn-primary" })
+
+    }
+</fieldset>
+
+
