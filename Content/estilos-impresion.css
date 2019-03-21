@@ -1,0 +1,20 @@
+﻿@media print {
+
+    .botonera {
+
+        display:none;
+
+
+    }
+
+    .btn1 {
+        display: none;
+    }
+    .fin {
+        display: none;
+    }
+    #Encabezado, #Menu, #Pie {
+        display: none;
+    } 
+    /* Aquí irían tus reglas CSS específicas para imprimir */
+}
